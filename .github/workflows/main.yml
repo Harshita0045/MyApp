@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Hello world action step
-        working-directory: githubfiles
+        #working-directory: githubfiles
         run: docker build . --file Dockerfile --tag my-image1:$(date +%s)
       - name: Get the output docker image
         run: docker images
