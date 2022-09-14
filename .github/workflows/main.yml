@@ -19,4 +19,4 @@ jobs:
       - name: Get the output docker image
         run: docker images
       - name: Get the output docker containers
-        run: docker ps -a
+        run: docker container
