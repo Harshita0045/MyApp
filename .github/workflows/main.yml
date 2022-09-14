@@ -11,9 +11,10 @@ jobs:
        # working-directory: /home/runner/work/GitHubactions-1/GitHubactions-1/./github/github/workflows
     steps:
       - uses: actions/checkout@v1
-      - name: Hello world action step
+      - name: Docker Image Build
         #working-directory: githubfiles
-        #run: docker build . --file Dockerfile --tag my-image1:$(date +%s)
+        run: docker build . --file Dockerfile --tag my-image1:$(date +%s)
+      - name: Docker run containers
         run: docker container run -d 8080:8080 my-image1
       - name: Get the output docker image
         run: docker images
