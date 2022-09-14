@@ -20,4 +20,5 @@ jobs:
         run: docker images
       - name: Get the output docker containers
         run: docker container ls
+      - name: Save the file  
         run: docker container commit 70a9796a2ebd rhel-httpd:latest
