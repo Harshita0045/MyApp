@@ -15,7 +15,7 @@ jobs:
         #working-directory: githubfiles
         run: docker build . --file Dockerfile --tag my-image1:$(date +%s)
       - name: Docker run containers
-        run: docker container run -d 8080:8080 my-image1
+        run: docker run -d 8080:8080 my-image1
       - name: Get the output docker image
         run: docker images
       - name: Get the output docker containers
