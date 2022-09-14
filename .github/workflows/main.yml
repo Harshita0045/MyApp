@@ -1,0 +1,19 @@
+name: MyFirstJob
+
+on: [push]
+
+jobs:
+  Docker_images:
+    runs-on: ubuntu-latest
+    name: Docker Images and Container view
+    #defaults:
+     # run:
+       # working-directory: /home/runner/work/GitHubactions-1/GitHubactions-1/./github/github/workflows
+    steps:
+      - name: Hello world action step
+      #  working-directory: ./github/workflows
+        run: docker build . --file Dockerfile --tag my-image1:$(date +%s)
+      - name: Get the output docker image
+        run: docker images
+      - name: Get the output docker containers
+        run: docker ps -a
