@@ -10,6 +10,7 @@ jobs:
      # run:
        # working-directory: /home/runner/work/GitHubactions-1/GitHubactions-1/./github/github/workflows
     steps:
+      - uses: actions/checkout@v1
       - name: Hello world action step
         working-directory: githubfiles
         run: docker build . --file Dockerfile --tag my-image1:$(date +%s)
