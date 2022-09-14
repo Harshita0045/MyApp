@@ -21,4 +21,6 @@ jobs:
       - name: Get the output docker containers
         run: docker container ls
       - name: Save the file  
-        run: docker container commit my-image1 rhel-httpd:latest
+        run: docker image tag my-image1:latest my-image1 registry-host:8080/myadmin/my-image1:latest
+
+     
