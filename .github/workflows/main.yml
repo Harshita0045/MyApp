@@ -13,9 +13,9 @@ jobs:
       - uses: actions/checkout@v1
       - name: Docker Image Build
         #working-directory: githubfiles
-        run: docker build . --file Dockerfile --tag my-image1:$(date +%s)
+        run: docker build . --file Dockerfile --tag my-image1
       - name: Docker run containers
-        run: docker run -d 8080:8080 my-image1
+        run: docker run -d my-image1 8080:8080
       - name: Get the output docker image
         run: docker images
       - name: Get the output docker containers
