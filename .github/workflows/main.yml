@@ -22,5 +22,7 @@ jobs:
         run: docker container ls
       - name: Save the file  
         run: docker image tag my-image1:latest registry-host:8080/myadmin/my-image1:latest
+      - name: PUsh an image
+        run: docker image push registry-host:8080/myadmin/my-image1:latest
 
      
