@@ -13,16 +13,12 @@ jobs:
       - uses: actions/checkout@v1
       - name: Docker Image Build
         #working-directory: githubfiles
-        run: docker build . --file Dockerfile --tag my-image1
-      - name: Docker run containers
-        run: docker run -d my-image1 8080:8080
-      - name: Get the output docker image
+        run: docker build . --file Dockerfile --tag harshita0045/my-image1
+     # - name: Docker run containers
+       # run: docker run -d my-image1 8080:8080
+      - name: Image name
         run: docker images
-      - name: Get the output docker containers
-        run: docker container ls
-      - name: Save the file  
-        run: docker image tag my-image1:latest registry-host:8080/myadmin/my-image1:latest
       - name: PUsh an image
-        run: docker image push registry-host:8080/myadmin/my-image1:latest
+        run: docker push harshita0045/my-image1 
 
      
