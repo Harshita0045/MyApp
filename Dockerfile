@@ -3,6 +3,8 @@ FROM node:16.3.0-alpine
 RUN mkdir -p /app
 WORKDIR /app
 
+GIT_COMMIT=$(git rev-parse --short HEAD)
+
 #COPY package.json package-lock.json ./
 
 # install packages

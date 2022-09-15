@@ -12,16 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Docker Image Build
-       # env: 
-            #GIT_COMMIT: $(git rev-parse --short HEAD)
-        run: |
-            GIT_COMMIT: $(git rev-parse --short HEAD)
-            echo $GIT_COMMIT
-
         #working-directory: githubfiles
-        #run: docker build . --file Dockerfile --tag harshita0045/my-image1:commit-$GIT_COMMIT
-     # - name: Docker run containers
-       # run: docker run -d my-image1 8080:8080
+        run: docker build . --file Dockerfile --tag harshita0045/my-image1:commit-$GIT_COMMIT
       - name: Image name
         run: docker images
       - name: Login to DOKCER HUB
