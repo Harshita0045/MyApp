@@ -13,7 +13,9 @@ jobs:
       - uses: actions/checkout@v1
       - name: Docker Image Build
         #working-directory: githubfiles
-        run: git rev-parse --short HEAD
+        run: 
+              GIT_COMMIT=$(git rev-parse --short HEAD)
+              echo $GIT_COMMIT
       #  run: docker build . --file Dockerfile --tag harshita0045/my-image1:commit-$GIT_COMMIT
       - name: Image name
         run: docker images
