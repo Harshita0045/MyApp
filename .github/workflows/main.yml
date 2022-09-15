@@ -12,10 +12,12 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Docker Image Build
-        env: 
+       # env: 
+            #GIT_COMMIT: $(git rev-parse --short HEAD)
+        run: |
             GIT_COMMIT: $(git rev-parse --short HEAD)
-        run:
             echo $GIT_COMMIT
+
         #working-directory: githubfiles
         #run: docker build . --file Dockerfile --tag harshita0045/my-image1:commit-$GIT_COMMIT
      # - name: Docker run containers
