@@ -14,8 +14,10 @@ jobs:
       - name: Docker Image Build
         env: 
             GIT_COMMIT: $(git rev-parse --short HEAD)
+        run:
+            echo $GIT_COMMIT
         #working-directory: githubfiles
-        run: docker build . --file Dockerfile --tag harshita0045/my-image1:commit-$GIT_COMMIT
+        #run: docker build . --file Dockerfile --tag harshita0045/my-image1:commit-$GIT_COMMIT
      # - name: Docker run containers
        # run: docker run -d my-image1 8080:8080
       - name: Image name
