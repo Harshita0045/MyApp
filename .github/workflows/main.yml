@@ -19,7 +19,11 @@ jobs:
       - name: Image name
         run: docker images
       - name: Login to DOKCER HUB
-        run:  docker login -u "harshita0045" -p "hs96#pOkh" docker.io
+       # run:  docker login -u "harshita0045" -p "hs96#pOkh" docker.io
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
       - name: PUsh an image
         run: docker push harshita0045/my-image1 
 
