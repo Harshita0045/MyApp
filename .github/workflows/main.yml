@@ -12,8 +12,10 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Docker Image Build
+        env: 
+            GIT_COMMIT: $(git rev-parse --short HEAD)
         #working-directory: githubfiles
-        run: docker build . --file Dockerfile --tag harshita0045/my-image1
+        run: docker build . --file Dockerfile --tag harshita0045/my-image1:commit-$GIT_COMMIT
      # - name: Docker run containers
        # run: docker run -d my-image1 8080:8080
       - name: Image name
@@ -26,5 +28,7 @@ jobs:
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
       - name: Image Push
         run: docker push harshita0045/my-image1 
+
+      
 
      
