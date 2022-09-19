@@ -23,7 +23,7 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
       - name: Image Push
-        run: docker push harshita0045/my-image2 
+        run: docker push harshita0045/my-image2:${{ github.sha }}
 
       
 
