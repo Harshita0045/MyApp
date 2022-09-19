@@ -13,10 +13,7 @@ jobs:
       - uses: actions/checkout@v1
       - name: Docker Image Build
         #working-directory: githubfiles
-        run: | 
-            GIT_COMMIT = $ {{ git rev-parse --short HEAD }}
-            echo $GIT_COMMIT
-            docker build . --file Dockerfile --tag harshita0045/my-image1
+        run: docker build . --file Dockerfile --tag harshita0045/my-image1 :${{ github.head_ref }}.${{ github.sha }}
       - name: Image name
         run: docker images
       - name: Login to DOKCER HUB
