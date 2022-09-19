@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v1
       - name: Docker Image Build
         #working-directory: githubfiles
-        run: docker build . --file Dockerfile --tag harshita0045/my-image1:${{ github.sha }}
+        run: docker build . --file Dockerfile --tag harshita0045/my-image2:${{ github.sha }}
       - name: Image name
         run: docker images
       - name: Login to DOKCER HUB
@@ -23,7 +23,7 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
       - name: Image Push
-        run: docker push harshita0045/my-image1 
+        run: docker push harshita0045/my-image2 
 
       
 
